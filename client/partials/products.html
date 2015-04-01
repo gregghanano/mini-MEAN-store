@@ -1,0 +1,28 @@
+<div ng-controller='ordersController'>
+
+	<div id="left-bar">
+		<div id='left-bar-text'>
+			<input type='text' placeholder="search...">
+			<h3>Add new Product</h3>
+			<h5>Name</h5>
+			<input type='text' name='productName' ng-model='newProduct.productName' placeholder='name...'>
+			<h5>Image URL</h5>
+			<input type='text' name='image' ng-model='newProduct.image'
+			placeholder='url...'>
+			<h5>Description</h5>
+			<textarea name='description' ng-model='newProduct.description' placeholder='Description...'></textarea>
+			<h5>Initial Quantity</h5>
+			<input type='number' name='initialQuantity' ng-model='newProduct.initialQuantity'>
+			<br>
+			<input type='submit' ng-click='addProduct()' value='Add Product'>
+		</div>
+	</div>
+	<div id='main-content'>
+		<div class='product-box' ng-repeat='product in products'>
+			<img class='image-size' src='{{product.image}}'>
+			<p>{{product.productName}}</p>
+			<p>({{product.initialQuantity}} left)</p>
+		</div>
+		
+	</div>
+</div>

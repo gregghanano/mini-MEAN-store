@@ -1,0 +1,21 @@
+<div ng-controller='ordersController'>
+	<h1>This is the Dashboard View</h1>
+		<div class='dashboard-left-nav'>
+			<input type='text' placeholder='search'>
+		</div>
+		<div class='dashboard-content'>
+			<div class='dashboard-products' ng-repeat="product in products">
+				<img class='image-size' src='{{product.image}}'>
+				<p>{{product.productName}}</p>
+				<p>({{product.initialQuantity}} left)</p>
+			</div>
+			<div class='recent-orders'>
+				<h4>Recent Orders</h4>
+				<ul class='recent-orders-dashboard' ng-repeat="order in orders">
+					<li class='dashboard-order-list'>{{order.customer.customerName}} purchased {{order.quantity}} {{order.product.productName}}</li>
+				</ul>
+			</div>
+			<div class='new-customers'>
+			</div>
+		</div>
+</div>
