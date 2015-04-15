@@ -2,7 +2,7 @@
 
 	<div id="left-bar">
 		<div id='left-bar-text'>
-			<input type='text' placeholder="search...">
+			<input type='text' placeholder="search..." ng-model='filter_name'>
 			<h3>Add new Product</h3>
 			<h5>Name</h5>
 			<input type='text' name='productName' ng-model='newProduct.productName' placeholder='name...'>
@@ -18,7 +18,7 @@
 		</div>
 	</div>
 	<div id='main-content'>
-		<div class='product-box' ng-repeat='product in products'>
+		<div class='product-box' ng-repeat='product in products | filter:filter_name'>
 			<img class='image-size' src='{{product.image}}'>
 			<p>{{product.productName}}</p>
 			<p>({{product.initialQuantity}} left)</p>
